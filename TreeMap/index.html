@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Map - Fast Foods</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="treemap"></div>
+    <script>
+        
+        let dados = [{
+            type: 'treemap',
+            labels: ['Mc Donalds', 'Burguer King', 'Bobs', 'Subway','KFC', 'Habibs', 'Spoleto', 'Casa do Pão de Queijo'],
+            parents: ['', '', '', '','', '', '', ''],
+            values: [70, 150, 150, 300, 400, 350, 10, 200],
+            marker: {
+                colors: ['#ffa500', '#ffa500', '#ffa500', '#ffa500','#ffa500', '#ffa500', '#ffa500', '#ffa500'],
+            }
+        }];
+
+        // Layout do treemap
+        var layout = {
+            margin: { t: 0, l: 0, r: 0, b: 0 },
+
+        
+        };
+        
+
+        // Configurando e exibindo o treemap
+        Plotly.newPlot('treemap', dados, layout);
+    </script>
+</body>
+</html>
