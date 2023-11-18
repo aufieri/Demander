@@ -3,33 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tree Map - Fast Foods</title>
+    <title>Tree Map - Food Service</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="treemap"></div>
+    <div id="estatisticas"><h2>Tree Map De Food Service</h2>
+        <ul>
+            1. McDonald's (Arcos Dourados) (R$ 5,41 bilhões)
+            <li>2. Burger King (R$ 4,00 bilhões)</li>    
+            <li>    3. Cacau Show (R$ 2,94 bilhões)</li>
+            <li>4. Subway (R$ 1,41 bilhão)</li>    
+            <li> 5. Madero (R$ 1,32 bilhão)</li>   
+            <li>6. Habib's (R$ 1,29 bilhão)</li>    
+            <li>7. Grupo Trigo (R$ 1,27 bilhão)</li>    
+            <li> 8. (IMC) International Meal Company Alimentação (R$ 1,26 bilhão)</li>   
+            <li>9. (Bob's) BFFC (R$ 1,05 bilhão)</li>    
+            <li>10. Coco Bambu (R$ 1,02 bilhão)</li>    
+        </ul>
+        <h4>Valor Total arrecadado no ano de 2021: R$20,94 Bilhões</h4>
+    </div>
+
     <script>
         
         let dados = [{
             type: 'treemap',
-            labels: ['Mc Donalds', 'Burguer King', 'Bobs', 'Subway','KFC', 'Habibs', 'Spoleto', 'Casa do Pão de Queijo'],
-            parents: ['', '', '', '','', '', '', ''],
-            values: [70, 150, 150, 300, 400, 350, 10, 200],
+            labels: ['Mc Donalds', 'Burguer King', 'Cacau-Show', 'Subway','Madero', 'Habibs', 'Grupo Trigo', 'IMC', 'BFFC', 'Coco Bambu'],
+            parents: ['', '', '', '','', '', '', '' ,'', ''],
+            values: [25.84, 19.10, 14.04, 6.73, 6.30, 6.16, 6.06, 6.02, 5.01, 4.74],
             marker: {
-                colors: ['#ffa500', '#ffa500', '#ffa500', '#ffa500','#ffa500', '#ffa500', '#ffa500', '#ffa500'],
+                colors: ['#FF2A00', '#FF4F1A', '#FF6937', '#FF7849','#FF885D', '#FF885D', '#FF885D', '#FF885D', '#FFA381', '#FFA381'],
             }
         }];
 
         // Layout do treemap
-        var layout = {
-            margin: { t: 0, l: 0, r: 0, b: 0 },
-
-        
+        var esquema = {
+            margin: {t: 10},
         };
         
+        // Exibicao do tree map
+        Plotly.newPlot('treemap', dados, esquema);
 
-        // Configurando e exibindo o treemap
-        Plotly.newPlot('treemap', dados, layout);
     </script>
 </body>
 </html>

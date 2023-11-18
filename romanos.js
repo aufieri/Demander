@@ -46,9 +46,9 @@ class Conversor {
 const numeroInput = prompt("Digite um número para converter para algarismos romanos:");
 
 
-// Método de usar numero real inserido para Romano
+// Validacao da entrada do usuario
 const numeroReal = parseInt(numeroInput);
-if (!isNaN(numeroReal)) {
+if (!isNaN(numeroReal) && numeroReal > 0) {
     const conversor = new Conversor();
     const numeroRomano = conversor.converterRealParaRomano(numeroReal);
 
